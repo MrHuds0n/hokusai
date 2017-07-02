@@ -1,0 +1,13 @@
+extends layout
+block content
+  .column.hokusai#panel
+    #logo
+      include hokusai.svg
+    h1 Hokusai
+  .column.decklist#decklist1
+    label(for='decklist1-input') Decklist ID:
+    input(type="text", placeholder="45723")#decklist1-input
+  .column.decklist#decklist2
+    label(for='decklist2-input') Decklist ID:
+    input(type="text", placeholder="25862")#decklist2-input
+  script(src="/scripts/index.js")
