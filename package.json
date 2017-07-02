@@ -27,6 +27,7 @@
     ]
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "babel src --out-dir build --copy-files; node build/index.js",
+    "run": "node index.js"
   }
 }
