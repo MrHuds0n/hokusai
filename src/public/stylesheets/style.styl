@@ -31,21 +31,77 @@ input[type=text]
   max-width 10em
   text-align center
 
+.logo-container
+  display flex
+  flex-direction column
+  align-items center
+
 .column
   height 100%
   width 100%
+  padding .5em
 
   display flex
   flex-direction column
   align-items center
   justify-content center
 
+.decklist
+  position relative
+
+.similarities, .differences
+  width 100%
+  position relative
+
+.similarities
+  color green
+.differences
+  color red
+
+.card-container
+  width 100%
+  z-index 5
+
+  h3
+    cursor pointer
+
+  &:hover
+    .card-container-hidden
+      display block
+
+  .card-container-hidden
+    position absolute
+    display none
+    color black
+    width 50%
+    right 0
+    top 0
+    background white
+
+    blockquote
+      padding-left .5em
+      border-left .2em black solid
+
+      &.anarch
+        border-left-color orangered
+      &.criminal
+        border-left-color royalblue
+      &.shaper
+        border-left-color limegreen
+      &.hb
+        border-left-color blueviolet
+      &.jinteki
+        border-left-color crimson
+      &.nbn
+        border-left-color darkorange
+      &.weyland
+        border-left-color darkgreen
 
 
 //Eyecandy
 #svgcircle, #svgpath
   transition stroke .7s ease-in-out
-  
+
 #logo
   transition transform 0s ease-in-out,
              height .7s ease-in-out,

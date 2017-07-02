@@ -1,0 +1,38 @@
+extends layout
+
+mixin card(key)
+  .card-container
+    h3 #{key.quantity} #{key.card.title}
+    .card-container-hidden
+      h3 #{key.card.uniqueness ? "♦" : ""} #{key.card.title}
+      p #{key.card.type_code.charAt(0).toUpperCase() + key.card.type_code.slice(1)}#{key.card.keywords ? ":" : ""} #{key.card.keywords} • Cost: #{key.card.cost} • Influence: #{key.card.faction_cost}
+      blockquote(class=key.card.faction_code)!= key.card.text
+      p #{key.card.faction_code.charAt(0).toUpperCase() + key.card.faction_code.slice(1)} • #{key.card.illustrator} • #{key.card.pack_code.toUpperCase()} #{key.card.position}
+
+block content
+  .column.hokusai#panel
+    .logo-container
+      #logo
+        include hokusai.svg
+      h1 Hokusai
+      
+    .similarities
+      each key in compare.similarities
+        -if(key.quantity != 0)
+          +card(key)
+            
+    .differences
+      each key in compare.differences
+        +card(key)
+  
+  .column.decklist#decklist1
+    h2= firstName
+    
+    each key in first
+      +card(key)
+  
+  .column.decklist#decklist2
+    h2= secondName
+    
+    each key in second
+      +card(key)

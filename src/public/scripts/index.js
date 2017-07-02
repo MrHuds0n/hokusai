@@ -1,6 +1,7 @@
 //Eyecandy
 const input1 = document.getElementById('decklist1-input')
 const input2 = document.getElementById('decklist2-input')
+const logo = document.getElementById('logo')
 const circle = document.getElementById('svgcircle')
 const path = document.getElementById('svgpath')
 
@@ -17,3 +18,7 @@ function color() {
     path.style.stroke = "black"
   }
 }
+
+logo.addEventListener('click', () => {
+  location.pathname = `/${input1.value}/${input2.value}`
+})

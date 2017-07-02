@@ -28,6 +28,24 @@ export default (first, second) => {
     }
   }
 
+  for(let one in second) {
+    let found = false
+
+    for(let each of similarities) {
+      if(one === each.id) {
+        found = true
+        break
+      }
+    }
+
+    if(!found) {
+      differences.push({
+        "id": one,
+        "quantity": second[one] * -1
+      })
+    }
+  }
+
   return {
     similarities: similarities,
     differences: differences
