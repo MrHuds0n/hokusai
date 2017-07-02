@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Satisfy|Roboto');
+
+header-font = "Satisfy"
+body-font = "Roboto"
+
+*, *:before, *:after
+  margin 0
+  padding 0
+  box-sizing border-box
+  font-family body-font
+
+body
+  height 100vh
+  width 100vw
+
+  display flex
+
+  @media only screen and (max-width: 800px)
+    flex-direction column
+
+  @media only screen and (min-width: 800px)
+    flex-direction row
+
+h1
+  font-family header-font
+  font-size 3em
+
+input[type=text]
+  font-size 1em
+  padding .5em
+  max-width 10em
+  text-align center
+
+.column
+  height 100%
+  width 100%
+
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+
+
+
+//Eyecandy
+#svgcircle, #svgpath
+  transition stroke .7s ease-in-out
+  
+#logo
+  transition transform 0s ease-in-out,
+             height .7s ease-in-out,
+             width .7s ease-in-out
+  cursor pointer
+
+  &:hover
+    transform rotate(360deg)
+    transition transform .7s ease-in-out
+
+//Ordering
+@media only screen and (min-width: 800px)
+  #panel
+    order 2
+  #decklist1
+    order 1
+  #decklist2
+    order 3
