@@ -132,9 +132,10 @@ exports.default = function (app) {
           first: firstCards,
           second: secondCards,
           compare: compareFetched
-          //*/
+        };
+        //*/
 
-        };res.render('decklists', obj);
+        res.render('decklists', obj);
       } catch (e) {
         console.log(e);
         res.sendStatus(400);
