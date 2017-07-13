@@ -6,6 +6,9 @@
   "repository": "https://github.com/MrHuds0n/hokusai",
   "author": "mrhudson <protegegod@gmail.com>",
   "license": "LGPL-3.0",
+  "engines": {
+	"node": "8.1.4"
+  },
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
